@@ -1,36 +1,221 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚛 Owner Operator Copilot OS
 
-## Getting Started
+> **The AI Operating System for Independent Trucking Businesses**
 
-First, run the development server:
+Owner Operator Copilot OS is an AI-first SaaS platform that helps owner-operators spend less time doing paperwork and more time making money.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Instead of juggling multiple applications for dispatching, bookkeeping, compliance, and document management, drivers work with one intelligent AI Copilot that coordinates specialized AI agents.
+
+---
+
+# Mission
+
+Help owner-operators spend less time doing paperwork and more time making money.
+
+---
+
+# Vision
+
+Build the most trusted AI Operating System for owner-operators.
+
+The platform combines an AI Dispatcher, AI Bookkeeper, AI Compliance Assistant, and intelligent document processing into one unified operating system.
+
+---
+
+# Core Principles
+
+- 📱 Mobile First
+- 🤖 AI First
+- 👤 Human Approval Before High-Risk Actions
+- 🔍 Transparent AI Reasoning
+- 📂 Smart Document Management
+- 🔄 Workflow Automation
+- 🧠 Business Graph Intelligence
+- 📜 Complete Audit Trail
+
+---
+
+# Current Status
+
+## Phase
+
+Active Development
+
+## Completed
+
+### Sprint 1
+
+- AI Command Center
+- Dashboard
+- KPI Cards
+- Smart Document Inbox
+- AI Summary
+- Active Loads
+
+### Sprint 2
+
+- AI Agent Framework
+- Copilot Agent
+- Document Agent
+- Dispatch Agent
+- Billing Agent
+- Compliance Agent
+- Shared Agent Core
+
+### Documentation
+
+- Project Bible
+- Product Vision
+- Product Principles
+- Architecture
+- AI Agents
+- User Workflows
+- Document Pipeline
+- Business Graph
+- Database Schema
+- API Guidelines
+- Engineering Standards
+
+---
+
+# Planned Features
+
+## AI Copilot
+
+Coordinates every workflow across the platform.
+
+## Smart Document Inbox
+
+Automatically processes trucking documents.
+
+## Workflow Engine
+
+Coordinates AI agents and business processes.
+
+## Activity Timeline
+
+Maintains a complete audit history.
+
+## Business Graph
+
+Connects documents, loads, customers, brokers, trucks, drivers, and financial records.
+
+---
+
+# High-Level Architecture
+
+```text
+Driver
+
+↓
+
+AI Copilot
+
+↓
+
+Workflow Engine
+
+↓
+
+AI Agents
+
+↓
+
+Business Graph
+
+↓
+
+Activity Timeline
+
+↓
+
+Dashboard
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Technology Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Frontend
 
-## Learn More
+- Next.js
+- TypeScript
+- Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- AI Agents
+- Workflow Engine
+- Business Graph
+- Activity Timeline
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Future
 
-## Deploy on Vercel
+- PostgreSQL
+- Prisma
+- Redis
+- Object Storage
+- AI Provider Integration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Repository Structure
+
+```text
+app/
+components/
+docs/
+lib/
+public/
+tests/
+```
+
+---
+
+# Documentation
+
+Documentation is organized under the `docs/` directory.
+
+Highlights include:
+
+- Project Bible
+- Architecture
+- Product Vision
+- AI Agents
+- User Workflows
+- Engineering Standards
+
+---
+
+# Development Roadmap
+
+- ✅ Foundation
+- ✅ AI Agent Framework
+- 🚧 Operating System Core
+- ⏳ Intelligent Document Processing
+- ⏳ Private Alpha
+- ⏳ Business Operations
+- ⏳ Public Beta
+- ⏳ Production Launch
+
+---
+
+# Design Philosophy
+
+Owner Operator Copilot OS is built around one central idea:
+
+> AI should reduce administrative work while keeping the owner-operator in complete control.
+
+Every recommendation should be transparent.
+
+Every important action should require approval.
+
+Every workflow should leave an audit trail.
+
+---
+
+# License
+
+This project is currently under active development.
+
+Licensing will be determined before public release.
