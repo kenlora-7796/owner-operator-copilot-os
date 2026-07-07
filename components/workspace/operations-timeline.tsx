@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import type { TimelineEntry } from "@/lib/timeline";
 
-export function AIActivityFeed() {
+export function OperationsTimeline() {
   const [entries, setEntries] = useState<TimelineEntry[]>([]);
 
   async function loadTimeline() {
@@ -21,7 +21,7 @@ export function AIActivityFeed() {
     <section className="rounded-3xl border border-slate-800 bg-slate-900 p-4">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-lg font-bold text-white">Operations Timeline</h3>
+          <h3 className="text-lg font-bold text-white">AI Activity Feed</h3>
           <p className="mt-1 text-sm text-slate-400">
             Live operating history from the AI kernel.
           </p>

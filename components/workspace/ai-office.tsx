@@ -14,12 +14,12 @@ function getEmployeeIcon(id: string) {
   return "🤖";
 }
 
-export function AITeam() {
+export function AiOffice() {
   const { employees } = workspaceService.getWorkspace();
 
   return (
     <section className="rounded-3xl border border-slate-800 bg-slate-900 p-4">
-      <h3 className="text-lg font-bold text-white">AI Office</h3>
+      <h3 className="text-lg font-bold text-white">AI Team</h3>
       <p className="mt-1 text-sm text-slate-400">
         Your digital operations team.
       </p>

@@ -6,12 +6,12 @@ function getPriorityColor(priority: string) {
   return "text-emerald-400 bg-emerald-500/10";
 }
 
-export function AIActionCenter() {
+export function WorkQueue() {
   const { workQueue } = workspaceService.getWorkspace();
 
   return (
     <section className="rounded-3xl border border-slate-800 bg-slate-900 p-4">
-      <h3 className="text-lg font-bold text-white">Work Queue</h3>
+      <h3 className="text-lg font-bold text-white">AI Action Center</h3>
       <p className="mt-1 text-sm text-slate-400">
         Decisions that need your attention.
       </p>
