@@ -6,7 +6,7 @@ export function GreetingPanel() {
       </p>
 
       <h2 className="mt-3 text-3xl font-bold text-white">
-        Your AI Operations Center is ready for today's work.
+        Owner Operator Copilot OS is today&apos;s trucking command center.
       </h2>
 
       <div className="mt-5 grid gap-3 text-sm text-slate-300 sm:grid-cols-2 lg:grid-cols-4">

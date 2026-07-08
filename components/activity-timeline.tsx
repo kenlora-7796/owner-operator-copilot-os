@@ -13,10 +13,13 @@ export function ActivityTimeline() {
     setEntries(result.data ?? []);
   }
 
-  useEffect(() => {
+ useEffect(() => {
+  const timer = setTimeout(() => {
     loadTimeline();
-  }, []);
+  }, 0);
 
+  return () => clearTimeout(timer);
+}, []);
   return (
     <section className="rounded-2xl border border-slate-800 bg-slate-900 p-4">
       <h3 className="text-lg font-bold text-white">Activity Timeline</h3>
