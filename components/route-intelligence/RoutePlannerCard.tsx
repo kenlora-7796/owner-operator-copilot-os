@@ -1,6 +1,8 @@
-﻿export function RoutePlannerCard() {
+﻿import { Card } from "@/components/ui/Card";
+
+export function RoutePlannerCard() {
   return (
-    <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+    <Card>
       <p className="text-sm font-semibold text-emerald-400">AI Route Planner</p>
       <h2 className="mt-2 text-2xl font-bold text-white">Jackson, MS to Dallas, TX</h2>
       <p className="mt-2 text-slate-300">
@@ -18,6 +20,6 @@
           <p className="font-semibold text-white">Dallas, TX</p>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

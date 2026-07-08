@@ -26,15 +26,6 @@
 - Mobile Responsive
 - Documentation
 
----
-
-
-
-## Sprint 4 — Route Intelligence
-
-### Planned Features
-## 🚧 Current Sprint
-
 ### Sprint 4 — Route Intelligence
 
 ✅ Milestone 1 — Foundation
@@ -45,8 +36,10 @@
 
 ✅ Milestone 4 — AI Route Planner
 
-🚧 Milestone 5 — Mission Control UI
+✅ Milestone 5 — Mission Control UI
 
+### Sprint 5-Live Data & Integrations
+Current Sprint
 ⬜ Milestone 6 — Testing & Release
 - GPS Routing
 - AI Route Planner
