@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { calculateRouteIntelligence } from "@/lib/routing/route-intelligence";
 
 interface LiveRouteResult {
   origin: string;
@@ -30,9 +31,21 @@ function formatDriveTime(totalMinutes: number): string {
 export function RouteTester() {
   const [origin, setOrigin] = useState("Jackson, MS");
   const [destination, setDestination] = useState("Memphis, TN");
+  const [truckMpg, setTruckMpg] = useState("6.5");
+  const [dieselPrice, setDieselPrice] = useState("3.50");
+
   const [route, setRoute] = useState<LiveRouteResult | null>(null);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const intelligence = route
+    ? calculateRouteIntelligence({
+        distanceMiles: route.distanceMiles,
+        driveTimeMinutes: route.estimatedDriveTimeMinutes,
+        truckMpg: Number(truckMpg),
+        dieselPricePerGallon: Number(dieselPrice),
+      })
+    : null;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -79,13 +92,11 @@ export function RouteTester() {
 
   return (
     <section className="rounded-xl border bg-white p-6 shadow-sm">
-      <h2 className="text-xl font-semibold">
-        Live Route Test
-      </h2>
+      <h2 className="text-xl font-semibold">Live Route Test</h2>
 
       <p className="mt-2 text-sm text-slate-600">
-        Submit an origin and destination to calculate real mileage and drive
-        time using Google Routes.
+        Submit an origin and destination to calculate real mileage, drive time,
+        and fuel estimates using Google Routes.
       </p>
 
       <form
@@ -116,6 +127,36 @@ export function RouteTester() {
           />
         </label>
 
+        <label className="space-y-2">
+          <span className="text-sm font-medium">Truck MPG</span>
+
+          <input
+            type="number"
+            min="0.1"
+            step="0.1"
+            value={truckMpg}
+            onChange={(event) => setTruckMpg(event.target.value)}
+            className="w-full rounded-lg border px-3 py-2"
+            required
+          />
+        </label>
+
+        <label className="space-y-2">
+          <span className="text-sm font-medium">
+            Diesel Price per Gallon
+          </span>
+
+          <input
+            type="number"
+            min="0"
+            step="0.01"
+            value={dieselPrice}
+            onChange={(event) => setDieselPrice(event.target.value)}
+            className="w-full rounded-lg border px-3 py-2"
+            required
+          />
+        </label>
+
         <button
           type="submit"
           disabled={isLoading}
@@ -127,13 +168,9 @@ export function RouteTester() {
 
       {error ? (
         <div className="mt-6 rounded-lg border border-red-300 bg-red-50 p-4">
-          <p className="font-medium text-red-700">
-            Route request failed
-          </p>
+          <p className="font-medium text-red-700">Route request failed</p>
 
-          <p className="mt-1 text-sm text-red-600">
-            {error}
-          </p>
+          <p className="mt-1 text-sm text-red-600">{error}</p>
         </div>
       ) : null}
 
@@ -141,9 +178,7 @@ export function RouteTester() {
         <div className="mt-6 space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-lg border p-4">
-              <p className="text-sm text-slate-500">
-                Live Distance
-              </p>
+              <p className="text-sm text-slate-500">Live Distance</p>
 
               <p className="mt-1 text-2xl font-bold">
                 {route.distanceMiles} miles
@@ -156,12 +191,52 @@ export function RouteTester() {
               </p>
 
               <p className="mt-1 text-2xl font-bold">
-                {formatDriveTime(
-                  route.estimatedDriveTimeMinutes
-                )}
+                {formatDriveTime(route.estimatedDriveTimeMinutes)}
               </p>
             </div>
           </div>
+
+          {intelligence ? (
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              <div className="rounded-lg border p-4">
+                <p className="text-sm text-slate-500">Average Speed</p>
+
+                <p className="mt-1 text-2xl font-bold">
+                  {intelligence.averageSpeedMph} mph
+                </p>
+              </div>
+
+              <div className="rounded-lg border p-4">
+                <p className="text-sm text-slate-500">
+                  Estimated Diesel
+                </p>
+
+                <p className="mt-1 text-2xl font-bold">
+                  {intelligence.estimatedFuelGallons} gal
+                </p>
+              </div>
+
+              <div className="rounded-lg border p-4">
+                <p className="text-sm text-slate-500">
+                  Estimated Fuel Cost
+                </p>
+
+                <p className="mt-1 text-2xl font-bold">
+                  ${intelligence.estimatedFuelCost.toFixed(2)}
+                </p>
+              </div>
+
+              <div className="rounded-lg border p-4">
+                <p className="text-sm text-slate-500">
+                  Fuel Cost per Mile
+                </p>
+
+                <p className="mt-1 text-2xl font-bold">
+                  ${intelligence.fuelCostPerMile.toFixed(2)}
+                </p>
+              </div>
+            </div>
+          ) : null}
 
           <div className="rounded-lg bg-slate-50 p-4 text-sm">
             <p>
@@ -182,9 +257,7 @@ export function RouteTester() {
 
             <p>
               <strong>Route geometry:</strong>{" "}
-              {route.encodedPolyline
-                ? "Received"
-                : "Not returned"}
+              {route.encodedPolyline ? "Received" : "Not returned"}
             </p>
           </div>
         </div>
