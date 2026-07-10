@@ -7,9 +7,9 @@ export class EnvironmentValidator {
   check(): EnvironmentCheck[] {
     return [
       {
-        name: "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY",
+        name: "GOOGLE_MAPS_API_KEY",
         configured: Boolean(
-          process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+          process.env.GOOGLE_MAPS_API_KEY
         ),
       },
       {
