@@ -1,5 +1,5 @@
-import { WorkspaceLayout } from "@/components/workspace";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return <WorkspaceLayout />;
+export default function HomePage() {
+  redirect("/route-intelligence/workspace");
 }
