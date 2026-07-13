@@ -187,7 +187,7 @@ export function RouteIntelligenceSidebar() {
       <div className="hidden px-5 pb-5 lg:block">
   <div className="border-t border-white/10 pt-4 text-center">
     <p className="text-xs font-semibold text-slate-500">
-      Owner Operator Copilot OS
+      LoraOS
     </p>
 
     <p className="mt-1 text-[11px] text-slate-600">
@@ -195,8 +195,7 @@ export function RouteIntelligenceSidebar() {
     </p>
 
     <p className="mt-2 text-[10px] text-slate-600">
-      © 2026 Owner Operator Copilot OS
-Closed Alpha v0.1. All rights reserved.
+      © 2026 LoraOS Closed Alpha v0.1. All rights reserved.
     </p>
   </div>
 </div>
