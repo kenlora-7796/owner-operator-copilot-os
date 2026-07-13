@@ -9,7 +9,7 @@ export function TopBar({ workspaceTitle, workspaceSubtitle }: TopBarProps) {
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">
-            Owner Operator Copilot OS
+              LoraOS • Tierra AI Labs
           </p>
           <h2 className="text-lg font-bold">{workspaceTitle}</h2>
           {workspaceSubtitle ? (

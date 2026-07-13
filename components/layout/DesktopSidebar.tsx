@@ -19,9 +19,9 @@ export function DesktopSidebar() {
     <aside className="hidden min-h-screen w-64 border-r border-slate-800 bg-slate-950 p-4 text-white lg:block">
       <div className="mb-8">
         <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">
-          Owner Operator
+          Tierra AI Labs
         </p>
-        <h1 className="mt-1 text-lg font-bold">Copilot OS</h1>
+        <h1 className="mt-1 text-lg font-bold">LoraOS</h1>
       </div>
 
       <nav className="space-y-2">

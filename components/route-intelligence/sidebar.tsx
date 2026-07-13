@@ -54,11 +54,11 @@ export function RouteIntelligenceSidebar() {
       <div className="flex items-center justify-between px-4 py-4 lg:block lg:px-5 lg:py-6">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-400">
-            Owner Operator
+           TIERRA AI LABS 
           </p>
 
           <h1 className="mt-1 text-lg font-semibold tracking-tight text-white">
-            Copilot OS
+            LoraOS
           </h1>
         </div>
 
